@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#6A6A6A"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -21,24 +22,24 @@
 
 
         <ImageView
-            android:id="@+id/imageView8"
+            android:id="@+id/circle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/circle" />
 
         <ImageView
-            android:id="@+id/imageView9"
+            android:id="@+id/square"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/square" />
 
         <ImageView
-            android:id="@+id/imageView10"
+            android:id="@+id/triangle"
             android:layout_width="135dp"
             android:layout_height="134dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/triangulo" />
+            app:srcCompat="@drawable/triangle" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
