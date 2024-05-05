@@ -45,6 +45,7 @@ class AreaCalculator : AppCompatActivity(), View.OnClickListener{
 
     override fun onClick(view: View?) {
         val shape = intent.getStringExtra("shape")
+        val toast = "Campo vacío"
 
         if(shape != null){
             when(shape){
@@ -54,7 +55,7 @@ class AreaCalculator : AppCompatActivity(), View.OnClickListener{
                         val result = areaCalculatorViewModel.getCircle(radius)
                         binding.tvResult.text = "El área del círculo es $result cm2"
                     } else{
-                        Toast.makeText(this, "Pon un número", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, toast, Toast.LENGTH_SHORT).show()
                     }
                 }
                 "square" -> {
@@ -63,6 +64,8 @@ class AreaCalculator : AppCompatActivity(), View.OnClickListener{
                         val height = binding.etHeight.text.toString()
                         val result = areaCalculatorViewModel.getSquare(base, height)
                         binding.tvResult.text = "El área del cuadrado/rectángulo es $result cm2"
+                    } else{
+                        Toast.makeText(this, toast, Toast.LENGTH_SHORT).show()
                     }
 
                 }
@@ -72,6 +75,8 @@ class AreaCalculator : AppCompatActivity(), View.OnClickListener{
                         val height = binding.etHeight.text.toString()
                         val result = areaCalculatorViewModel.getTriangle(base, height)
                         binding.tvResult.text = "El área del triángulo es $result cm2"
+                    } else{
+                        Toast.makeText(this, toast, Toast.LENGTH_SHORT).show()
                     }
                 }
             }
