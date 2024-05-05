@@ -25,23 +25,17 @@ class AreaCalculator : AppCompatActivity(), View.OnClickListener{
             insets
         }
 
-        shapeType()
+        circleType()
         configClickListener()
     }
 
-    fun shapeType() {
+    fun circleType() {
         val shape = intent.getStringExtra("shape")
 
-        if(shape != null) {
-            when(shape){
-                "circle" -> {
+        if(shape != null && shape == "circle"){
                     binding.tvBase.text = "Radius"
                     binding.tvHeight.visibility = View.INVISIBLE
                     binding.etHeight.visibility = View.INVISIBLE
-                }
-                
-
-            }
         }
     }
 
@@ -50,16 +44,39 @@ class AreaCalculator : AppCompatActivity(), View.OnClickListener{
     }
 
     override fun onClick(view: View?) {
-        if(binding.tvBase.text == "Radius"){
-            if(binding.etBase.text.isNotEmpty()){
-                val radius = binding.etBase.text.toString()
-                val result = areaCalculatorViewModel.getCircle(radius)
-                binding.tvResult.text = "El área del círculo es $result"
-            } else{
-                Toast.makeText(this, "Pon un número", Toast.LENGTH_SHORT).show()
-            }
+        val shape = intent.getStringExtra("shape")
 
+        if(shape != null){
+            when(shape){
+                "circle" -> {
+                    if(binding.etBase.text.isNotEmpty()){
+                        val radius = binding.etBase.text.toString()
+                        val result = areaCalculatorViewModel.getCircle(radius)
+                        binding.tvResult.text = "El área del círculo es $result cm2"
+                    } else{
+                        Toast.makeText(this, "Pon un número", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                "square" -> {
+                    if(binding.etBase.text.isNotEmpty() && binding.etHeight.text.isNotEmpty()){
+                        val base = binding.etBase.text.toString()
+                        val height = binding.etHeight.text.toString()
+                        val result = areaCalculatorViewModel.getSquare(base, height)
+                        binding.tvResult.text = "El área del cuadrado/rectángulo es $result cm2"
+                    }
+
+                }
+                "triangle" -> {
+                    if(binding.etBase.text.isNotEmpty() && binding.etHeight.text.isNotEmpty()){
+                        val base = binding.etBase.text.toString()
+                        val height = binding.etHeight.text.toString()
+                        val result = areaCalculatorViewModel.getTriangle(base, height)
+                        binding.tvResult.text = "El área del triángulo es $result cm2"
+                    }
+                }
+            }
         }
+
     }
 
 
