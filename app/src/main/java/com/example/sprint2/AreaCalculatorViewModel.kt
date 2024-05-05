@@ -4,13 +4,12 @@ import androidx.lifecycle.ViewModel
 
 class AreaCalculatorViewModel: ViewModel() {
 
-    fun getCircle(radius: String): Int{
+    fun getCircle(radius: String): Int {
         val area = radius.toInt()
         val pi = 3.14
         val result = pi * area * area
-        val finalResult = result.toInt()
 
-        return finalResult
+        return result.toInt()
     }
     fun getSquare(base: String, height: String): Int {
         val result = base.toInt() * height.toInt()
