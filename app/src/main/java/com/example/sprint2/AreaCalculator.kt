@@ -1,6 +1,7 @@
 package com.example.sprint2
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -8,7 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.sprint2.databinding.ActivityAreaCalculatorBinding
 
-class AreaCalculator : AppCompatActivity() {
+class AreaCalculator : AppCompatActivity(){
 
     private val areaCalculatorViewModel: AreaCalculatorViewModel by viewModels()
     private lateinit var binding: ActivityAreaCalculatorBinding
@@ -22,5 +23,36 @@ class AreaCalculator : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        shapeType()
+        configClickListener()
     }
+
+    fun shapeType() {
+        val shape = intent.getStringExtra("shape")
+
+        if(shape != null) {
+            when(shape){
+                "circle" -> {
+                    binding.tvBase.text = "Radius"
+                    binding.tvHeight.visibility = View.INVISIBLE
+                    binding.etHeight.visibility = View.INVISIBLE
+                    areaCalculatorViewModel.getCircle()
+                }
+                "square" -> {
+                    areaCalculatorViewModel.getSquare()
+                }
+                "triangle" -> {
+                    areaCalculatorViewModel.getTriangle()
+                }
+
+            }
+        }
+    }
+
+    private fun configClickListener() {
+        binding.btCalculate.setOnClickListener(this)
+    }
+
+
 }
