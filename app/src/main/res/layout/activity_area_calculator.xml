@@ -59,6 +59,12 @@
             android:layout_height="wrap_content"
             android:textSize="30dp"
             android:textColor="@color/white" />
+
+        <ImageButton
+            android:id="@+id/btBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/ic_menu_revert" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
