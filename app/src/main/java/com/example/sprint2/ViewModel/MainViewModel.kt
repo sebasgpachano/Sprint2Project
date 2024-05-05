@@ -1,4 +1,4 @@
-package com.example.sprint2
+package com.example.sprint2.ViewModel
 
 import androidx.lifecycle.ViewModel
 
