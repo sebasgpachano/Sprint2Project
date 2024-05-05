@@ -29,6 +29,7 @@
             android:id="@+id/etBase"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:ems="10"
             android:inputType="number" />
 
@@ -43,6 +44,7 @@
             android:id="@+id/etHeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:ems="10"
             android:inputType="number" />
 
