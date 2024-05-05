@@ -55,7 +55,7 @@ class AreaCalculator : AppCompatActivity(), View.OnClickListener{
                     val base = binding.etBase.text.toString()
                     val height = binding.etHeight.text.toString()
                     val result = areaCalculatorViewModel.shape(shape, base, height)
-                    binding.tvResult.text = "The area is $result cm2"
+                    binding.tvResult.text = "El área es $result cm2"
                 }
             }
             R.id.btBack -> {
