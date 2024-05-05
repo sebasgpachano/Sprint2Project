@@ -1,4 +1,6 @@
 package com.example.sprint2
 
-class AreaCalculatorViewModel {
+import androidx.lifecycle.ViewModel
+
+class AreaCalculatorViewModel: ViewModel() {
 }
