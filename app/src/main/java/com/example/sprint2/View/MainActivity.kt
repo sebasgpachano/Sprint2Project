@@ -1,4 +1,4 @@
-package com.example.sprint2
+package com.example.sprint2.View
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.sprint2.R
+import com.example.sprint2.ViewModel.MainViewModel
 import com.example.sprint2.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
