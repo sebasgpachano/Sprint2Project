@@ -24,6 +24,7 @@ class AreaCalculatorViewModel: ViewModel() {
 
     fun shape(shape: String, base: String, height: String): Int {
         var result = 0
+
             when (shape) {
                 "circle" -> {
                     if(base.isNotEmpty()){
