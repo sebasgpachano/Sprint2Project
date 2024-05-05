@@ -2,7 +2,6 @@ package com.example.sprint2
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -49,26 +48,12 @@ class AreaCalculator : AppCompatActivity(), View.OnClickListener{
         when (view?.id) {
             R.id.btCalculate -> {
                 val shape = intent.getStringExtra("shape")
-                val toast = "Campo vacío"
 
                 if (shape != null) {
                     val base = binding.etBase.text.toString()
                     val height = binding.etHeight.text.toString()
-
-                    when (shape) {
-                        "circle" -> {
-                            calculateCircleArea(base, toast)
-                        }
-
-                        "square" -> {
-                            calculateSquareArea(base, height, toast)
-
-                        }
-
-                        "triangle" -> {
-                            calculateTriangleArea(base, height, toast)
-                        }
-                    }
+                    val result = areaCalculatorViewModel.shape(shape, base, height)
+                    binding.tvResult.text = "The area is $result cm2"
                 }
             }
             R.id.btBack -> {
@@ -77,36 +62,5 @@ class AreaCalculator : AppCompatActivity(), View.OnClickListener{
         }
 
         }
-
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
-
-    private fun calculateCircleArea(radius: String, toast: String) {
-        if (radius.isNotEmpty()) {
-            val result = areaCalculatorViewModel.getCircle(radius)
-            binding.tvResult.text = "The area of the circle is $result cm2"
-        } else {
-            showToast(toast)
-        }
-    }
-
-    private fun calculateSquareArea(base: String, height: String, toast: String) {
-        if (base.isNotEmpty() && height.isNotEmpty()) {
-            val result = areaCalculatorViewModel.getSquare(base, height)
-            binding.tvResult.text = "The area of the square/rectangle is $result cm2"
-        } else {
-            showToast(toast)
-        }
-    }
-
-    private fun calculateTriangleArea(base: String, height: String, toast: String) {
-        if (base.isNotEmpty() && height.isNotEmpty()) {
-            val result = areaCalculatorViewModel.getTriangle(base, height)
-            binding.tvResult.text = "The area of the triangle is $result cm2"
-        } else {
-            showToast(toast)
-        }
-    }
 
 }
