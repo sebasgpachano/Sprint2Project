@@ -34,7 +34,7 @@ class AreaCalculator : AppCompatActivity(), View.OnClickListener{
         val shape = intent.getStringExtra("shape")
 
         if(shape != null && shape == "circle"){
-                    binding.tvBase.text = "Radius"
+                    binding.tvBase.text = "Radio"
                     binding.tvHeight.visibility = View.INVISIBLE
                     binding.etHeight.visibility = View.INVISIBLE
         }
