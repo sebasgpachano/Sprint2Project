@@ -61,6 +61,6 @@ class AreaCalculator : AppCompatActivity(), View.OnClickListener{
             }
         }
 
-        }
+    }
 
 }
