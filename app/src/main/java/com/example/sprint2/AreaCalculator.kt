@@ -53,7 +53,7 @@ class AreaCalculator : AppCompatActivity(), View.OnClickListener{
                     if(binding.etBase.text.isNotEmpty()){
                         val radius = binding.etBase.text.toString()
                         val result = areaCalculatorViewModel.getCircle(radius)
-                        binding.tvResult.text = "El área del círculo es $result cm2"
+                        binding.tvResult.text = "The area of the circle $result cm2"
                     } else{
                         showToast(toast)
                     }
@@ -63,7 +63,7 @@ class AreaCalculator : AppCompatActivity(), View.OnClickListener{
                         val base = binding.etBase.text.toString()
                         val height = binding.etHeight.text.toString()
                         val result = areaCalculatorViewModel.getSquare(base, height)
-                        binding.tvResult.text = "El área del cuadrado/rectángulo es $result cm2"
+                        binding.tvResult.text = "The area of the square/rectangle is $result cm2"
                     } else{
                         showToast(toast)
                     }
@@ -74,7 +74,7 @@ class AreaCalculator : AppCompatActivity(), View.OnClickListener{
                         val base = binding.etBase.text.toString()
                         val height = binding.etHeight.text.toString()
                         val result = areaCalculatorViewModel.getTriangle(base, height)
-                        binding.tvResult.text = "El área del triángulo es $result cm2"
+                        binding.tvResult.text = "The area of the triangle is $result cm2"
                     } else{
                         showToast(toast)
                     }
