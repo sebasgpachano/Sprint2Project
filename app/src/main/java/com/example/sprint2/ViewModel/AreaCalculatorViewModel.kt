@@ -22,26 +22,29 @@ class AreaCalculatorViewModel: ViewModel() {
         return result
     }
 
+
     fun shape(shape: String, base: String, height: String): Int {
         var result = 0
 
-            when (shape) {
-                "circle" -> {
-                    if(base.isNotEmpty()){
-                        result = getCircle(base)
-                    }
-                }
-                "square" -> {
-                    if(base.isNotEmpty() && height.isNotEmpty()){
-                        result = getSquare(base, height)
-                    }
-                }
-                "triangle" -> {
-                    if(base.isNotEmpty() && height.isNotEmpty()){
-                        result = getTriangle(base, height)
-                    }
+        when (shape) {
+            "circle" -> {
+                if (base.isNotEmpty()) {
+                    result = getCircle(base)
                 }
             }
+
+            "square" -> {
+                if (base.isNotEmpty() && height.isNotEmpty()) {
+                    result = getSquare(base, height)
+                }
+            }
+
+            "triangle" -> {
+                if (base.isNotEmpty() && height.isNotEmpty()) {
+                    result = getTriangle(base, height)
+                }
+            }
+        }
 
         return result
     }
