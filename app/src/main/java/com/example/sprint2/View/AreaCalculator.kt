@@ -34,9 +34,9 @@ class AreaCalculator : AppCompatActivity(), View.OnClickListener{
         val shape = intent.getStringExtra("shape")
 
         if(shape != null && shape == "circle"){
-                    binding.tvBase.text = "Radio"
-                    binding.tvHeight.visibility = View.INVISIBLE
-                    binding.etHeight.visibility = View.INVISIBLE
+            binding.tvBase.text = "Radio"
+            binding.tvHeight.visibility = View.INVISIBLE
+            binding.etHeight.visibility = View.INVISIBLE
         }
     }
 
@@ -46,7 +46,6 @@ class AreaCalculator : AppCompatActivity(), View.OnClickListener{
     }
 
     override fun onClick(view: View?) {
-
         when (view?.id) {
             R.id.btCalculate -> {
                 val shape = intent.getStringExtra("shape")
@@ -62,7 +61,5 @@ class AreaCalculator : AppCompatActivity(), View.OnClickListener{
                 finish()
             }
         }
-
     }
-
 }
