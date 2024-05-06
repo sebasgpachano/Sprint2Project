@@ -47,11 +47,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 intent.putExtra("shape", shape)
                 startActivity(intent)
             }
+
             R.id.square -> {
                 val shape = mainViewModel.getSquare()
                 intent.putExtra("shape", shape)
                 startActivity(intent)
             }
+
             R.id.triangle -> {
                 val shape = mainViewModel.getTriangle()
                 intent.putExtra("shape", shape)
