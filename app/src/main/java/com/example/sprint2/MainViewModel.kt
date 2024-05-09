@@ -2,15 +2,15 @@ package com.example.sprint2
 
 import androidx.lifecycle.ViewModel
 
-class MainViewModel : ViewModel(){
+class MainViewModel : ViewModel(), Shapes{
 
-    fun getCircle(): String {
+    override fun getCircle(): String {
         return "circle"
     }
-    fun getSquare(): String{
+    override fun getSquare(): String{
         return "square"
     }
-    fun getTriangle(): String{
+    override fun getTriangle(): String{
         return "triangle"
     }
 
